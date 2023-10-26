@@ -5,7 +5,7 @@ from bing_controller import requires_web_search, get_bing_search_results
 
 
 def interactive_chat_with_bing_search(data, use_log=False):
-        user_message = data['messages'][-1]['value'].strip()  # Assuming the last message is from the user
+        user_message = data['messages'][-1]['value'].strip()  
 
         # Initialize variables for Bing search and response
         bing_search_used = False

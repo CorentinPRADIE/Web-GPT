@@ -4,7 +4,7 @@ import __main__
 
 def requires_web_search(user_question: str) -> bool:
     prompt = (f"Given the user's question: \"{user_question}\", "
-              f"does it suggest a need for real-time or up-to-date information from a web search? "
+              f"does it suggest an explicit need for real-time or up-to-date information from a web search? "
               f"Please answer with \"Yes\" or \"No\".")
 
     response = openai.Completion.create(

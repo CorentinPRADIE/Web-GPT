@@ -243,7 +243,6 @@
 <script setup>
 
 let messages = []
-console.warn("Messages a une valeur par defaut, il faudrait trouver a quoi ca sert");
 
 import { nextTick, onMounted, ref, watch, computed } from "vue";
 const props = defineProps({

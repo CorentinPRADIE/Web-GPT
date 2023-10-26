@@ -1,6 +1,14 @@
+<script setup>
+console.log("About page has been loaded!");
+import Sidebar from '../components/Sidebar.vue';
+</script>
+
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <Sidebar></Sidebar>
+  <div class="about bg-gray-800">
+    <h1 class="title">This is an about page</h1>
+    test
   </div>
 </template>
 
@@ -12,4 +20,8 @@
     align-items: center;
   }
 }
+.title {
+  justify-content: center;
+}
 </style>
+
