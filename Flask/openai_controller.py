@@ -7,7 +7,6 @@ from bing_controller import requires_web_search, get_bing_search_results
 def interactive_chat_with_bing_search(data, use_log=False):
         user_message = data['messages'][-1]['value'].strip()  
 
-        # Initialize variables for Bing search and response
         bing_search_used = False
         bing_response = ""
 
@@ -19,11 +18,13 @@ def interactive_chat_with_bing_search(data, use_log=False):
             if bing_results[0]:
                 bing_response = ""
                 for i in range(len(bing_results[0])):
-                    bing_response += f"{bing_results[0][i]}\n{bing_results[1][i]}\n{bing_results[2][i]}\n\n"
+                    # With link
+                    # bing_response += f"{bing_results[0][i]}\n{bing_results[1][i]}\n{bing_results[2][i]}\n\n"
+                    # Without link
+                    bing_response += f"{bing_results[0][i]}\n{bing_results[2][i]}\n\n"
             else:
                 bing_response = "Bing search did not return any results."
 
-            # Set bing_search_used to True
             bing_search_used = True
 
         # Convert input format to OpenAI format
@@ -49,7 +50,7 @@ def interactive_chat_with_bing_search(data, use_log=False):
             messages=messages
         )
 
-        # Extract assistant's response
+       
         assistant_response = response.choices[0].message['content']
 
         # Include the Bing search results in the assistant's response if a search was performed

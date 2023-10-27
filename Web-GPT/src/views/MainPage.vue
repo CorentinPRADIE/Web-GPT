@@ -1,9 +1,9 @@
 <script setup>
-import Guides from "./components/Guides.vue";
-import Chat from "./components/Chat.vue";
-import Sidebar from "./components/Sidebar.vue";
+import Guides from "../components/Guides.vue";
+import Chat from "../components/Chat.vue";
+import Sidebar from "../components/Sidebar.vue";
 import { ref, onMounted, watch } from "vue";
-import InputBar from "./components/InputBar.vue"; // Import the new component
+import InputBar from "../components/InputBar.vue"; // Import the new component
 import axios from 'axios';
 
 console.log('main page')

@@ -4,27 +4,22 @@ import __main__
 
 def requires_web_search(user_question: str) -> bool:
     prompt = (f"Given the user's question: \"{user_question}\", "
-              f"does it suggest an explicit need for real-time or up-to-date information from a web search? "
+              f"does it suggest an explicit need for real-time or up-to-date information from a web search? If you have doubt, say No. "
               f"Please answer with \"Yes\" or \"No\".")
 
     response = openai.Completion.create(
-        model="gpt-3.5-turbo-instruct",  # You can specify the 'gpt-3.5-turbo-instruct' model
+        model="gpt-3.5-turbo-instruct",  
         prompt=prompt,
         max_tokens=10
     )
 
-    # Extract the content of the response and convert to lowercase
     answer = response.choices[0].text.strip().lower()
 
-    # Check if the answer contains "yes" or "y" for affirmative responses
     if "yes" in answer or "y" in answer:
         return True
 
-    # Check if the answer contains "no" or "n" for negative responses
     if "no" in answer or "n" in answer:
         return False
-
-    # If the answer doesn't contain "yes", "y", "no", or "n", you can handle it as needed
     raise ValueError(f"Unexpected response from model: {answer}")
 
 
