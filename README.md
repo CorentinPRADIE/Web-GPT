@@ -38,6 +38,11 @@ npm install
 ### Back-end Setup:
 ```sh
 cd Flask
+pip install -r requirements.txt
+```
+or 
+```sh
+cd Flask
 pip install openai flask Flask-Cors
 ```
 ## Run the WebGPT:
